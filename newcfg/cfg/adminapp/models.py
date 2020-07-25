@@ -33,4 +33,33 @@ class Task(models.Model):
         default='Skill1',
         )
         
-        task_total_hour=models.IntegerField(validators=[MinValueValidator(0, message="Amount should be more than 0")])
+        task_total_hour=models.IntegerField(default=0,validators=[MinValueValidator(0, message="Amount should be more than 0")])
+        hpu=models.IntegerField(validators=[MinValueValidator(0, message="Amount should be more than 0")])
+
+
+
+class Skills(models.Model):
+
+    skill_name=models.CharField(max_length=500)
+    skill_hour=models.IntegerField()
+
+class Availability(models.Model):
+
+    username= models.CharField(max_length=500)
+    available=models.BooleanField(default=False)
+    hours_available=models.IntegerField(default=0,validators=[MinValueValidator(0, message="Amount should be more than 0")])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

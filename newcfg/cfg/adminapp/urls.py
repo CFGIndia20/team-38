@@ -6,5 +6,6 @@ urlpatterns = [
 	
 	path('session/',views.sessionadd,name='sessionadd'),
 	path('task/',views.taskadd,name='taskadd'),
+	path('progress/',views.progress,name="progress")
 
 ]
