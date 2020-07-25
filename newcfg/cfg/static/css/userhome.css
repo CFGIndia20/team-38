@@ -1,0 +1,18 @@
+
+header {
+  padding: 80px 10px;
+}
+
+section {
+  padding: 150px 0;
+}
+select{
+	width: 200px;
+}
+
+.header-site{
+   background-color: lightpink;
+   background-position: 100% 100%;
+   background-repeat: no-repeat;
+}
+	

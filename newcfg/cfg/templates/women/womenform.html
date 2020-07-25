@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <title>Scrolling Nav - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/womenform.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container" height="width:10px">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="home.html">Go Back</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="usersignin.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <header class="text-white header-site">
+    <div class="container text-center" style="padding-top:35px">
+      <h1>Umeed for Women</h1>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          {% load static %}
+{% block content %}
+<form action="" method="post" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+      <h1>SIGN UP</h1>
+      <div class="icon">
+        <i class="fas fa-user-circle"></i>
+      </div>
+      <div class="formcontainer">
+      <div class="container">
+        <label for="fname"><strong>First Name</strong></label>
+        <div class="col-sm-4">
+    {{ form.fname}}  
+  </div>
+        <br>
+        <label for="lname"><strong>Last Name</strong></label>
+        <div class="col-sm-4">
+    {{ form.lname}}  
+  </div>
+        <label for="location" style="padding-bottom: 2px"><strong>Enter your location:</strong></label>
+              <div class="col-sm-4">
+    {{ form.location}}  
+  </div><br>
+        <label for="contact"><strong> Contact No.</strong></label>
+        <div class="col-sm-4">
+    {{ form.contact}}  
+  </div><br>
+        <label for="skillset"><strong>Select a skill </strong></label><br>
+        <div class="col-sm-4">
+    {{ form.skillset}}  
+  </div>
+  <br>
+  <br>
+        <label for="img"><strong>Upload your image:<br></label>
+             <div class="col-sm-4">
+    {{ form.img}}  
+  </div>
+      </div>
+      <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  {% endblock content %}
+</div>
+</div>
+</div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Contact us</h2>
+          <p class="lead">Hyderabad: <br>
+
+19-4-332/C-1 <br>
+
+Kishan Bag, Hyderabad, Telangana<br>
+
+500002</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Code For Good- Umeed for Women 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="/static/js/scrolling-nav.js"></script>
+</body>
+
+</html>
