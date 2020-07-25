@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from adminapp import forms  
-from .models import Skills
+from .models import Skills,Task
+from .forms import TaskForm
+#from rest_framework.decorators import api_view 
 # Create your views here.
 
 def sessionadd(request):
@@ -23,19 +25,16 @@ def sessionadd(request):
 
 	return render(request,'admin/session.html',{'form': form})
 
+# @api_view(['POST'])
 def taskadd(request):
-
+	#import pdb;pdb.set_trace()
 	if request.method =='POST':
 		form = forms.TaskForm(request.POST)
 		if form.is_valid():
 
-		
 			record=form.save(commit=False)
-
-			r=Skills.objects.filter(skill_name=form.cleaned_data['task_skill']).values_list('skill_hour', flat=True)
-			r=list(r)
-			
-			record.task_total_hour= int(r[0]) * int(record.task_quantity)
+			print(record)
+			record.task_total_hour= int(record.hpu) * int(record.task_quantity)
 			record.save()
 
 			form=forms.TaskForm()
@@ -58,13 +57,20 @@ def assigntask(request,id):
 	hours=r.task_total_hour
 
 	skill=task_skill
+	
+
+	
 
 
 def progress(request):
 
-	return render(request,'admin/taskprogress.html')
+	return redirect("/adm/progress")
 
 
+
+def attendance(request):
+
+	return render(request,'admin/attendanceAdmin.html')
 
 
 

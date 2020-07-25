@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#REST_FRAMEWORK={'DEFAULT_RENDERER_CLASSES':('rest_framework.renderers.JSONRenderer'),'DEFAULT_PARSER_CLASSES':('rest_framework.parsers.JSONParser')}
+
 
 # Application definition
 
@@ -38,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
-    'adminapp'
-    
+    'adminapp',
+    # 'rest_framework',
     
 ]
 

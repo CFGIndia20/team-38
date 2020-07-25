@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Attendance</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/attendanceAdmin.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Umeed - Team P&emic</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="{% url 'adm:progress' %}">Task Progress</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="{% url 'adm:taskadd' %}">Create Task</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="//attendance">Session Attendance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="profileAdmin.html">Profile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="landing" >
+    <div class="container">
+      <h1 class="text-center text-white">Attendance</h1>
+      <div class="row">
+        <div class="col-lg-10 col-xs-2">
+          
+        </div>
+        <div class="col-lg-2 col-xs-10">
+          <button type="button" onclick="openForm()"><i class="fa fa-plus"></i> Add session</button>
+        </div>
+      </div>
+      <div class="form-popup" id="myForm">
+        <form method="POST" class="form-container">
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          <label for="session_name"><b>Session Name</b></label>
+          <input type="text" placeholder="Enter session" name="session_name" id ="" required>
+
+          <label for="session_date"><b>Session Date & Time</b></label>
+          <input type="datetime-local" placeholder="Date" name="session_date" required>
+      
+          <label for="session_duration"><b>Session Duration</b></label>
+          <input type="number" placeholder="0 hours" name="session_duration" required>
+
+          <label for="session_location"><strong>Select Location</strong><br>
+            <select name="session_location">
+                <option value="l1">Location 1</option>
+                <option value="l2">Location 2</option>
+                <option value="l3">Location 3</option>
+                <option value="l4">Location 4</option>
+                <option value="l5">Location 5</option>
+                <option value="l6">Location 6</option>
+            </select>
+          </label>
+          <button type="submit" class="btn">Add</button>
+        </form>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Footer -->
+  <footer class="py-2 bg-dark fixed-bottom">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Umeed - Team P&emic 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+ <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+
+  <!-- Custom JavaScript for this theme -->
+  
+  <script src="{% static 'js/attendanceAdmin.js' %}"></script>
+
+</body>
+
+</html>
