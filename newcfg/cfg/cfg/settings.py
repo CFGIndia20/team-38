@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
+    'women',
     
 ]
 
@@ -122,13 +123,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
+    
 ]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),'static')
+MEDIA_ROOT =  os.path.join(os.path.dirname(BASE_DIR), 'media') 
 MEDIA_URL = '/media/'
 
 # AUTH_USER_MODEL = 'home.CustomUser'
