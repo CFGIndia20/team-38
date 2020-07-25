@@ -19,7 +19,6 @@ from django.contrib.auth import views as auth_views
 from home import views 
 from django.conf import settings
 from django.conf.urls.static import static
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.homepage,name="homepage"),
@@ -27,9 +26,14 @@ urlpatterns = [
     path('home/', include('django.contrib.auth.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
-    path('women/',include('women.urls'))
+    path('women/',include('women.urls')),
+    path('admin/', views.login_success, name='login_success'),
+
+    path('user/', views.login_success, name='login_success'),
+
+    path('adm/',include('adminapp.urls')),
 ]
 if settings.DEBUG==True:
         urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
         urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-        
+
