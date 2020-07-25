@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login Page</title>
+	<link href="{% static 'css/login.css' %}" type="text/css" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+
+</head>
+<body>
+{% block content %}
+    <div class="body">
+            
+            <div class="login-box">
+                <h1>Login Here</h1>
+				<form method='POST'>
+				{% csrf_token %}
+				{{ form.as_p }}
+				<a href="{% url 'login' %}">
+				<input type='submit' value='Login'/>
+				</a>
+                <a href="/home/password_reset">Forget Password</a>
+                <br>
+                <a href="{% url 'signup' %}">Don't have an account? Signup</a>
+				</form>
+	</div>
+
+					<div style="float: right; padding: 20px;padding-bottom: 0px;">
+						<a class="txt2" href=/><h5 style="color: white">Home</h5>
+						
+						</a>
+					</div>
+    </body>
+{% endblock content %}
+</html>
