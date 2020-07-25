@@ -56,8 +56,21 @@ def assigntask(request,id):
 
 	hours=r.task_total_hour
 
-	skill=task_skill
-	
+	skill=r.task_skill
+
+	people = .objects.raw('SELECT *, age(birth_date) AS age FROM myapp_person')
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
 
