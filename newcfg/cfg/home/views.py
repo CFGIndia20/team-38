@@ -18,6 +18,17 @@ def register(request):
 
 def homepage(request):
 
-    
-
     return render(request,"home/homepage.html")
+
+def login_success(request):
+
+    rights=request.user.is_staff
+
+    if rights==1:
+
+        return redirect("/home/signup")
+
+    else:
+
+        return redirect("/")
+        

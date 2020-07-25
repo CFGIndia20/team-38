@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
+    'adminapp'
+    
     
 ]
 
@@ -133,7 +135,7 @@ MEDIA_URL = '/media/'
 
 # AUTH_USER_MODEL = 'home.CustomUser'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'login_success'
 #LOGIN_REDIRECT_URL = '/member/'
 LOGOUT_REDIRECT_URL = '/'
 
