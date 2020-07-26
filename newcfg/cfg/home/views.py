@@ -26,7 +26,7 @@ def login_success(request):
 
     if rights==1:
 
-        return redirect("/admin/task")
+        return redirect("/adm/task")
 
     else:
 
