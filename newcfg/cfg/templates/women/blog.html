@@ -9,14 +9,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Tasks</title>
+  <title>Umeed for Women</title>
 
   <!-- Bootstrap core CSS -->
   
 <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
+  <link href="{% static 'css/assigntask.css' %}" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="{% static 'css/taskAdmin.css' %}" rel="stylesheet">
 
 </head>
 
@@ -25,89 +24,75 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Umeed - Team P&emic</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Umeed for Women</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="taskAdmin.html">Task Progress</a>
+            <a class="nav-link js-scroll-trigger" href="usersignup.html">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="createTaskAdmin.html">Create Task</a>
+            <a class="nav-link js-scroll-trigger" href="usersignin.html">Sign In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="attendanceAdmin.html">Session Attendance</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="profileAdmin.html">Profile</a>
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <header id="landing" class="text-white">
-    <div class="container text-center">
-      <h1>Task Progress</h1>
-      <div class="col-lg-12 col-xs-12">
-        <table align="center" border>
-          <tr>
-              <th>Woman Name</th>
-              <th>Current Task</th>
-              <th>Completed Hours</th>
-              <th>Undertaken Hours</th>
-              <th>Compensation</th>
-              <th>Images</th>
-          </tr>
-        </table>
-      </div>
+  <header class="text-white header-site">
+    <div class="container text-center" style="padding-top:35px">
+      <h1>Umeed for Women</h1>
+      <p class="lead">We're all in this together – all committed to helping people realize their full potential.</p>
     </div>
   </header>
-<!--
+
+  <h2 align="center" style="padding-top:50px "> Top Employees Of the Week </h2>
+
   <section id="contact">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Contact us</h2>
-          <p class="lead"></p>
+          <h3> Top 1.  &nbsp &nbsp Sasikala V.</h3>
+            <p> Worked on Task3 for 8 hrs/day</p>
+        </div>
+        <br><br>
+        <div class="col-lg-8 mx-auto">
+          <h3> Top 2. &nbsp &nbsp Sharmila Banu P.</h3>
+            <p> Worked on Task1 for 7 hrs/day</p>
+        </div>
+<br><br>
+        <div class="col-lg-8 mx-auto">
+          <h3> Top 3. &nbsp &nbsp  Meenal Pandey</h3>
+            <p> Worked on Task2 for 5 hrs/day </p>
         </div>
       </div>
     </div>
   </section>
--->
+
+  
   <!-- Footer -->
-  <footer class="py-2 bg-dark fixed-bottom">
+  <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Umeed - Team P&emic 2020</p>
+      <p class="m-0 text-center text-white">Copyright &copy; Code For Good- Umeed for Women</p>
     </div>
     <!-- /.container -->
   </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+ <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
   <!-- Plugin JavaScript -->
   <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
   <!-- Custom JavaScript for this theme -->
+  <script src="{% static 'js/scrolling-nav.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
 
-  <!-- Custom JavaScript for this theme -->
-  <script src="{% static 'js/taskAdmin.js' %}"></script>
 
 </body>
 
 </html>
-
-{% for Le in le %}
-
-  {{Le.name}}
-  {{Le.locationp}}
-  {{Le.curr_work}}
-  {{Le.hrperday}}
-  {{Le.nopro}}
-  {{Le.day}}
-  <img src = "{{ Le.image.url }}">
-{% endfor %}

@@ -74,13 +74,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="taskAdmin.html">Task Progress</a>
+            <a class="nav-link js-scroll-trigger" href="/women/show/">Task Progress based on Location</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="createTaskAdmin.html">Create Task</a>
+            <a class="nav-link js-scroll-trigger" href="../adm/task">Create Task</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="attendanceAdmin.html">Session Attendance</a>
+            <a class="nav-link js-scroll-trigger" href="">Session Attendance</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="profileAdmin.html">Profile</a>
@@ -130,6 +130,47 @@
     </div>
     </div>
   </header>
+
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>All Tasks</h2>
+          <p> <table class="table" align="center">
+  {% if r %}
+    
+  <tr class="danger">
+  
+  <th>Name</th>
+  <th>Quantity</th>
+  <th>Category</th>
+  <th>Total Time</th>
+  
+
+  </tr>
+  {% for k in r %}
+  <tr class="success">
+    
+    <td>{{k.task_name}}</td>
+    <td>{{k.task_quantity}}</td>
+    <td>{{k.task_skill}}</td>
+    <td>{{k.task_total_hour}}</td>
+    <td><a href="">Allocation</a></td>
+    
+    
+  {% endfor %}
+  {% endif %}
+    
+  </tr>
+    </table></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
 
 
 

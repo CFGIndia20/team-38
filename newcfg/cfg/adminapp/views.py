@@ -1,7 +1,10 @@
 from django.shortcuts import render,redirect
 from adminapp import forms  
-from .models import Skills,Task
+from .models import Skills,Task,CurrentTask
 from .forms import TaskForm
+from django.http import HttpResponseRedirect 
+from django.urls import reverse
+from women.models import Women
 #from rest_framework.decorators import api_view 
 # Create your views here.
 
@@ -45,34 +48,49 @@ def taskadd(request):
 	else:
 		form=forms.TaskForm()
 
-	return render(request,'admin/task.html',{'form': form})
+
+	r=Task.objects.all()
+
+
+	return render(request,'admin/task.html',{'form': form,'r':r})
 
 	
 
 
-def assigntask(request,id):
+def assigntask(request,i):
 
-	r= Task.objects.get(id=id)
+	# r= Task.objects.get(id=id)
 
-	hours=r.task_total_hour
+	# hours=r.task_total_hour
 
-	skill=r.task_skill
+	# skill=r.task_skill
+	r = 3
+	tname="task1"
+	hours=10
+	skill="Skill1"
+	women=Women.objects.filter(available=True)
+	# no_of_women=len(women)
+	# total=Women.objects.filter(available=True).aggregate(Sum('hours_available'))
 
-	people = .objects.raw('SELECT *, age(birth_date) AS age FROM myapp_person')
+	# if total>hours:
+
+	# 	eachhour=hours//no_of_women
+	allocated=CurrentTask.objects.filter(task_name=tname).distinct()
+	print(allocated)
 
 
+	return render(request,'admin/allocation.html',{'women':women,'tname':tname,'all':allocated})
 
 
+def taskallocation(request,uname,tname):
 
-
-
-
-
-
-
-
+	Women.objects.filter(fname=uname).update(available=False)
+	p = CurrentTask(task_name=tname,username=uname)
+	p.save()
 
 	
+	return redirect("/adm/assigntask/1/")
+
 
 
 def progress(request):

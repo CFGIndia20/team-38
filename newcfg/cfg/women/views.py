@@ -47,5 +47,14 @@ def progressionshow(request):
         return render(request,"women/search.html",{})
 
 
+def profileview(request):
+
+    name="Neha"
+    namee = Women.objects.filter(fname = name)
+    return render(request,"women/profileview.html",{'namee':namee})
+  
+def blog(request):
+
+    return render(request,"women/blog.html")
 
 

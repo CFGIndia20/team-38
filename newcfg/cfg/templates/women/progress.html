@@ -13,7 +13,8 @@
   <title>Umeed for Women- user_home</title>
 
   <!-- Bootstrap core CSS -->
- <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
 
   <!-- Custom styles for this template -->
   <link href="{% static 'css/userhome.css' %}" rel="stylesheet">
@@ -31,14 +32,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+         
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="usersessions.html">Sessions</a>
+            <a class="nav-link js-scroll-trigger" href="/women/blog">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="qasession.html">Q/A Portal</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="userprofile.html">Profile</a>
+            <a class="nav-link js-scroll-trigger" href="/women/profileview/">Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="home.html">Log Out</a>
@@ -59,14 +58,18 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-        Update your Task Progress</h1><br>
+       <h1> Update your Task Progress</h1><br>
       <div class="formcontainer">
       <div class="container">
 
 <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
       {% csrf_token %}
+      <label for="task"><strong>Name</strong></label>
         {{ formp.name }}
+        <br>
+        <label for="task"><strong>Enter your location</strong></label>
         {{ formp.locationp }}
+        <br>
         <label for="task"><strong>Select the task you are working on</strong></label>
         <div class="col-sm-4">
         {{ formp.curr_work }}
@@ -75,17 +78,21 @@
         <div class="col-sm-4">
         {{ formp.hrperday }}
       </div>
+      <br>
         <label for="nprod"><strong>Number of products made today</strong></label>
         <div class="col-sm-4">
         {{ formp.nopro }}
       </div>
+      <br>
         <label for="hrday"><strong>Day</strong></label>
         <div class="col-sm-4">
         {{ formp.day }}
       </div>
+      <br>
         <label for="images"><strong>Upload an Image of your work</strong></label><div class="col-sm-4">
         {{ formp.img }}
       </div>
+      <br>
         <button type="submit">
                 Submit</button>
       </form>
@@ -95,6 +102,15 @@
 </div>
 </div>
 </section>
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="{% static 'js/taskAdmin.js' %}"></script>
 </body>
 {% endblock content %}
 </html>

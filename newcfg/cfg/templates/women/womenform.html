@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +11,10 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <title>Scrolling Nav - Start Bootstrap Template</title>
 
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/womenform.css' %}" rel="stylesheet">
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="/static/css/womenform.css" rel="stylesheet">
 
 </head>
 
@@ -23,7 +23,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container" height="width:10px">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,6 +37,10 @@
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
+          </li>
+
+            <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/women/profileview">Profile</a>
           </li>
         </ul>
       </div>
@@ -57,7 +61,7 @@
 {% block content %}
 <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
     {% csrf_token %}
-      <h1>SIGN UP</h1>
+      <h1>PROFILE</h1>
       <div class="icon">
         <i class="fas fa-user-circle"></i>
       </div>
@@ -129,14 +133,16 @@ Kishan Bag, Hyderabad, Telangana<br>
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="/static/vendor/jquery/jquery.min.js"></script>
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
   <!-- Custom JavaScript for this theme -->
-  <script src="/static/js/scrolling-nav.js"></script>
+  <script src="{% static 'js/scrolling-nav.js' %}"></script>
+  <!-- Custom JavaScript for this theme -->
+  
 </body>
 
 </html>

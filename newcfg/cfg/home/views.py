@@ -9,7 +9,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}!')
-            return redirect('/')
+            return redirect('/login')
     else:
         form = UserRegisterForm()
     return render(request, 'home/signup.html', {'form': form})
@@ -26,9 +26,9 @@ def login_success(request):
 
     if rights==1:
 
-        return redirect("/home/signup")
+        return redirect("/admin/task")
 
     else:
 
-        return redirect("/")
+        return redirect("/women")
         

@@ -1,11 +1,138 @@
-<html>
-	<head>
-		<title> HomePage</title>
-	</head>
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Umeed for Women</title>
+
+  <!-- Bootstrap core CSS -->
+   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/scrolling-nav.css' %}" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Umeed for Women</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/home/signup">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/login">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="text-white header-site">
+    <div class="container text-center" style="padding-top:35px">
+      <h1>Umeed for Women</h1>
+      <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>About Us</h2>
+          <p class="lead"> 
+            <p>
+            Whilst completing their fellowships with Teach for India, Gauri Mahendra and Udita Chadha discovered that the difficult living conditions of their students was having a detrimental effect upon their education.</p>
+            <p>
+
+Gauri’s exposure to the Barefoot Community and their village-based approach to solving problems formed the very foundation of Umeed.</p>
+<p>
+
+But what made a world of difference to her were her countless interactions with the people of Tilonia. In an in-depth conversation with Ram Niwas Bhaiya, one of the village folk and a pioneer in puppetry, she recollects discussing about the regressive caste, and gender discrimination system of our country. Even after putting his life towards this cause Ram Niwas bhaiya sighed saying “Sangharsh abhi baaki hai”. His words hit Gauri like a fist of realization.
+</p>
+<p>
+ 
+
+After a couple of months, the seeds of Umeed were sown and it was launched in Hyderabad in August 2014, with an aim of inspiring breakthroughs in the way the world treats women and to achieve immediate and lasting change in their lives.
+</p>
+</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>What we do</h2>
+          <p class="lead">At Umeed, our beneficiaries, women from low-income communities are trained to make simple, beautiful, and eco-friendly newspaper handicrafts. These then undergo stringent quality checks. After successful checks, the products are put on sale by way of setting up exhibitions at popular events, organizations, corporate houses, and community spaces.</p>
+
+ 
+
+<p>We are also gradually building our presence at retail outlets where the reach of our products would increase manifold.</p>
+
+ 
+
+<p>While adapted to meet local challenges, our work has at its foundation these three essential elements: Skill Building Values & Mindsets, and Exposure </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Contact us</h2>
+          <p class="lead">Hyderabad: <br>
+
+19-4-332/C-1 <br>
+
+Kishan Bag, Hyderabad, Telangana<br>
+
+500002</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Code For Good- Umeed for Women</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+ 
+
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="{% static 'js/scrolling-nav.js' %}"></script>
 
 
-	<body>
-		
-		HI This is the home page 
-	</body>
+
+</body>
+
 </html>

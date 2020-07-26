@@ -7,6 +7,8 @@ urlpatterns = [
 	path('session/',views.sessionadd,name='sessionadd'),
 	path('task/',views.taskadd,name='taskadd'),
 	path('progress/',views.progress,name="progress"),
-	path('attendance/',views.attendance,name="attendance")
+	path('attendance/',views.attendance,name="attendance"),
+	path('allocation/<str:uname>/<str:tname>/',views.taskallocation,name="taskallocation"),
+	path('assigntask/<int:i>/',views.assigntask,name="assigntask")
 	
 ]

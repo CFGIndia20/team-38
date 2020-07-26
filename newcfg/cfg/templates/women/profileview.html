@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Profile</title>
+	
+	
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/cs/bootstrap.min.css">
+</head>
+<style>
+	img{
+		border-radius: 50%;
+	}
+</style>
+<body>
+	<div class="fullpage">
+{% for Detail in namee %}
+	<table>
+	
+	<tr>
+		<tr>
+	<div class="form-group row">
+	<!--<label class="col-sm-2 col-form-label">Full Name</label>-->
+
+	<label class="col-sm-2 col-form-label">{{Detail.fname}} {{Detail.lname}}</label>
+	<td>
+	<div class="col-sm-4">
+
+		<!--<tr><div class="high">{{Detail.lname}}</div></tr>-->
+	</div>
+	</td>
+</div>
+</tr>
+<tr>
+	<div class="form-group row">
+	<label class="col-sm-2 col-form-label">Contact No: {{Detail.contact}}</label>
+	<td>
+	<div class="col-sm-4">
+	</div>
+</td>
+</div>
+	</tr>
+
+		<tr>
+			<div class="form-group row">
+	<label class="col-sm-2 col-form-label">Email Id: {{Detail.location}}</label>
+	<tr>
+	<div class="col-sm-4">
+		</div>
+		</tr>
+		</div>
+		</tr>
+
+
+		<tr>
+			<div class="form-group row">
+	<label class="col-sm-2 col-form-label">Address: {{Detail.skillset}}</label>
+	<tr>
+	<div class="col-sm-4">
+		</div>
+		</tr>
+		</div>
+	</tr>
+	<br>
+	<tr>
+
+			<div class="form-group row">
+	<label class="col-sm-2 col-form-label">Available</label>
+	<hr class="bighr" align="left">
+	<tr>
+	<div class="col-sm-4">
+		<tr>{{Detail.available}}</tr>
+		</div>
+		</tr>
+		</div>
+	</tr>
+	<br>
+	<br>
+		<tr>
+			<div class="form-group row">
+	<label class="col-sm-2 col-form-label">Hours Available Per Week</label>
+	<hr class="bighr" align="left">
+	<tr>
+	<div class="col-sm-4">
+		<tr>{{Detail.hours_available}}</tr>
+		</div>
+		</tr>
+</div>
+</tr>
+<br>
+<br>
+		<tr>
+			<div class="form-group row">
+	<label class="col-sm-2 col-form-label">Current Task Assigned</label>
+	<hr class="bighr" align="left">
+	<tr>
+	<div class="col-sm-4">
+		<img src="{{ Detail.img.url }}" style="width:200px"></tr>
+	</div>
+		</tr>
+	</div>
+</tr>
+<br>
+<br>
+</table>
+{% endfor %}
+</div>
+</body>
+</html>

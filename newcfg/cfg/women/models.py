@@ -1,5 +1,6 @@
 from django.db import models
 from django import forms
+from django.core.validators import RegexValidator,MinValueValidator
 
 # Create your models here.
 class Skills(models.Model):
@@ -15,6 +16,9 @@ class Women(models.Model):
     contact = models.CharField(max_length=10,default=None)
     skillset = models.ForeignKey(Skills,on_delete=models.CASCADE)
     img = models.FileField(default='default.jpg',upload_to='media/profile_pics')
+    available=models.BooleanField(default=False)
+    hours_available=models.IntegerField(default=0,validators=[MinValueValidator(0, message="Amount should be more than 0")])
+    current_task=models.CharField(max_length=100),
 
 class Task(models.Model):
     task = models.CharField(max_length=50)

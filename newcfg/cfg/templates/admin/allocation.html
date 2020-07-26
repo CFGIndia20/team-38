@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Umeed for Women</title>
+
+  <!-- Bootstrap core CSS -->
+ <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/assigntask.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Umeed for Women</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="usersignup.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="usersignin.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="text-white header-site">
+    <div class="container text-center" style="padding-top:35px">
+      <h1>Umeed for Women</h1>
+      <p class="lead">We're all in this together – all committed to helping people realize their full potential.</p>
+    </div>
+  </header>
+
+  
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Allocate Women to {{tname}}</h2>
+          <p> <table class="table" align="center">
+	{% if women %}
+		
+	<tr class="danger">
+	
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>No of Hours</th>
+	<th>Allocate</th>
+	
+
+	</tr>
+	{% for k in women %}
+	<tr class="success">
+		
+		<td>{{k.fname}}</td>
+		<td>{{k.lname}}</td>
+		<td>{{k.hours_available}}</td>
+		<td><a href="{% url 'adm:taskallocation' k.fname tname %}" class="btn btn-primary btn-sm " >Allocate</a></td>
+		
+	{% endfor %}
+	{% endif %}
+		
+	</tr>
+		</table></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Allocated Women to {{tname}}</h2>
+          <p> <table class="table" align="center">
+	{% if all %}
+		
+	<tr class="danger">
+	
+	<th>Username</th>
+	
+	
+
+	</tr>
+	{% for k in all %}
+	<tr class="success">
+		
+		<td>{{k.username}}</td>
+		
+		
+	{% endfor %}
+	{% endif %}
+		
+	</tr>
+		</table></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Code For Good- Umeed for Women</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="{% static 'js/scrolling-nav.js' %}"></script>
+
+</body>
+
+</html>
