@@ -48,6 +48,6 @@ Our platform is designed to serve the requirements of Umeed for women organisati
 1. Users can update their profiles once they are logged in, and they can add their skillset and location.
 2. A task is allocated to them based on their skillset and availability.
 3. Users can also view the list of sessions conducted.
-4. Users can view the blog page which displays the top performers of the week.
+4. Users can view the blog page which displays the top performers of the week.This would give the other motivation and zeal to work harder.
 
 
